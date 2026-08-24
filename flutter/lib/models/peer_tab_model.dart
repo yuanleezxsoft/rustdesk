@@ -22,7 +22,7 @@ enum PeerTabIndex {
 class PeerTabModel with ChangeNotifier {
   WeakReference<FFI> parent;
   int get currentTab => _currentTab;
-  int _currentTab = 0; // index in tabNames
+  int _currentTab = 1; // index in tabNames
   static const int maxTabCount = 1;
   static const List<String> tabNames = [
     'Address book',
