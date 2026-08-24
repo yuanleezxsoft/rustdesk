@@ -18,6 +18,7 @@ enum PeerTabIndex {
   group,
 }
 
+
 class PeerTabModel with ChangeNotifier {
   WeakReference<FFI> parent;
   int get currentTab => _currentTab;
