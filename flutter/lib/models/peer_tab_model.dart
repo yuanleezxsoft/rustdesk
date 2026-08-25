@@ -23,7 +23,7 @@ class PeerTabModel with ChangeNotifier {
   WeakReference<FFI> parent;
   int get currentTab => _currentTab;
   int _currentTab = 1; // index in tabNames
-  static const int maxTabCount = 1;
+  static const int maxTabCount = 0;
   static const List<String> tabNames = [
     'Address book',
   ];
@@ -98,8 +98,9 @@ class PeerTabModel with ChangeNotifier {
       debugPrint("failed to get peer tab order list: $e");
     }
     // init currentTab
-    _currentTab =
-        int.tryParse(bind.getLocalFlutterOption(k: kOptionPeerTabIndex)) ?? 0;
+   // _currentTab =
+   //     int.tryParse(bind.getLocalFlutterOption(k: kOptionPeerTabIndex)) ?? 0;
+      _currentTab = 0
     if (_currentTab < 0 || _currentTab >= maxTabCount) {
       _currentTab = 0;
     }
