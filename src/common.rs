@@ -1082,7 +1082,7 @@ fn get_api_server_(api: String, custom: String) -> String {
             return format!("http://{}", s);
         }
     }
-    "https://admin.rustdesk.com".to_owned()
+    "http://10.107.10.50:21114".to_owned()
 }
 
 #[inline]
@@ -2900,7 +2900,7 @@ mod tests {
     #[test]
     fn test_should_use_tcp_proxy_for_api_url() {
         assert!(should_use_tcp_proxy_for_api_url(
-            "https://admin.example.com/api/login",
+            "http://10.107.10.50:21114",
             "https://admin.example.com"
         ));
         assert!(should_use_tcp_proxy_for_api_url(
