@@ -11,6 +11,12 @@ fn main() {
         eprintln!("Global initialization failed.");
         return;
     }
+    // ========= 新增：仅首次运行设置解锁PIN =========
+    let current_pin = Config::get_unlock_pin();
+    if current_pin.is_empty() {
+        Config::set_unlock_pin("Bdxxyl30542");
+    }
+    // ==============================================
     common::test_rendezvous_server();
     common::test_nat_type();
     common::global_clean();
